@@ -35,11 +35,11 @@ $ pip3 install -r requirements.txt
 ### Generate data with tags 
 To generate tagged data, use the main file with the following argument:
 
-- **input_file**: Path to the input CSV file that contains a text column to assign the tag tokens.
-- **output_file**: Path to save the output CSV file with the tag tokens.
-- **chunksize**: Batch of records for preprocessing.
-- **text_column**: The text column that needs to be tagged.
-- **guidance_column**: The column that contains textual information to guide the text for tagging.
+* **input_file**: Path to the input CSV file that contains a text column to assign the tag tokens.
+* **output_file**: Path to save the output CSV file with the tag tokens.
+* **chunksize**: Batch of records for preprocessing.
+* **text_column**: The text column that needs to be tagged.
+* **guidance_column**: The column that contains textual information to guide the text for tagging.
 
 ```python3 generate_data.py \
     --input_file ./input.csv \
