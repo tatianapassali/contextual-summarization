@@ -32,11 +32,59 @@ $ virtualenv contextual-summarization
 $ source contextual-summarization//bin/activate
 $ pip3 install -r requirements.txt
 ```
+### Generate data with tags 
+To generate tagged data, use the main file with the following argument:
 
+input_file: Path to the input CSV file that contains a text column to assign the tag tokens.
+output_file: Path to save the output CSV file with the tag tokens.
+chunksize: Batch of records for preprocessing.
+text_column: The text column that needs to be tagged.
+guidance_column: The column that contains textual information to guide the text for tagging.
 
-## Get the data 
+```python3 generate_data.py \
+    --input_file ./input.csv \
+    --output_file ./output.csv \
+    --chunksize 1000 \
+    --text_column text \
+    --guidance_column guidance
+```
 
-You can download the tagged data
+## Get the data
+You can download the tagged data from Zenodo here:
+In our paper we conducted experiments for the following datasets: 
+CNN/DailyMail
+Xsum
+Multinews
+Depatebedia
+
+## Get embeddings representations
+We provide the embedding representations of the topics in the vox datasets in the vox directory :
+- label_embeddings: Embeddings of each single topic.
+- collection_embeddings: Embeddings of collections of documents for each topic.
+
+## Fine-tune models
+You can fine-tune your own models using the existing tagged datasets or generate tags on your own dataset. To fine-tune your own model with tagging, you can run the run.summarization.py as follows:
+
+```
+python3 run_summarization.py \
+    --model_name_or_path MODEL_NAME \
+    --tokenizer MODEL_NAME \
+    --do_train \
+    --do_eval \
+    --train_file PATH_OF_TRAIN_FILE \
+    --test_file  PATH_OF_TEST_FILE \
+    --validation_file PATH_OF_VALIDATION_FILE \
+    --per_device_train_batch_size=4 \
+    --per_device_eval_batch_size=12 \
+    --predict_with_generate \
+```
+
+### Measure trustworthiness
+You can  measure the trustworthiness of the generated summaries as follows:
+```
+analyzer = DocumentTrustworthinessAnalyzer(string_topics, file_path, data_path, topic_path)
+analyzer.analyze_trustworthiness()
+```
 
 ## License 
 This project is released under Apache 2.0 license.
