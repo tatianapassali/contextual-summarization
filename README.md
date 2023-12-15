@@ -1,10 +1,6 @@
 # Contextual Abstractive Summarization 
 
-Code for paper Contextual Abstractive Summarization 
-# topic-controllable-summarization
-Code for topic-controllable summarization
-
-This repository contains code for paper: Topic-Aware Evaluation and Transformer Methods for Topic-Controllable Summarization
+This repository contains code for paper: Contextual Abstractive Summarization 
 
 ## Requirements
 `nltk==3.5`\
