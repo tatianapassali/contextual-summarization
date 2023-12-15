@@ -145,7 +145,7 @@ class DocumentTrustworthinessAnalyzer:
         return parsed_list_from_file
 
 
-string_topics = loadtxt("./cleaned_categories.txt", delimiter="\n",
+string_topics = loadtxt("./categories.txt", delimiter="\n",
                         dtype=str, encoding='utf8').tolist()
 file_path = './generated_predictions.txt'
 data_path = './single_topic_test.csv'
