@@ -45,14 +45,6 @@ To generate tagged data, use the main file with the following argument:
     --guidance_column guidance
 ```
 
-## Get the data
-You can download the tagged data from Zenodo here:
-In our paper we conducted experiments for the following datasets: 
-* CNN/DailyMail
-* Xsum
-* Multinews
-* Depatebedia
-
 ## Get embeddings representations
 We provide the embedding representations of the topics in the vox datasets in the vox directory :
 
