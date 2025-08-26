@@ -1,6 +1,6 @@
 # Contextual Abstractive Summarization 
 
-This repository contains code for paper: Contextual Abstractive Summarization 
+This repository contains code for paper: [Controllable Abstractive Summarization with Arbitrary Textual Context](https://doi.org/10.1017/nlp.2025.10009)
 
 ## Requirements
 `nltk==3.5`\
